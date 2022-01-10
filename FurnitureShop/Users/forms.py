@@ -6,6 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm #add this
 
 # Create your forms here.
 
+# ---------New User Form-------------------------------------
 class NewUserForm(UserCreationForm):
 	email = forms.EmailField(required=True)
 	
@@ -38,6 +39,7 @@ class NewUserForm(UserCreationForm):
 		return user
 
 
+# ---------User Login Form-------------------------------------
 class UserLoginForm(AuthenticationForm):
 	username = forms.CharField(widget=forms.TextInput(attrs=
     {'placeholder':'Enter Username', 'class':'form-control'}))

@@ -3,15 +3,25 @@ from django.db import models
 
 
 # Create your models here.
-class living(models.Model):
-    pass
-
-class Studyroom(models.Model):
+# ---------Living Room-------------------------------------
+class Livingroom(models.Model):
     ProductID=models.IntegerField(default=True)
-    Title=models.CharField(max_length=500,default=True)
+    Title=models.CharField(max_length=500)
     AMT=models.FloatField(default=True)
     Discount=models.IntegerField(null=True)
-    IMG=models.CharField(max_length=2500,default=True)
+    IMG=models.CharField(max_length=2500)
+
+    def __str__(self):
+        return self.Title
+
+
+# ---------Study Room-------------------------------------
+class Studyroom(models.Model):
+    ProductID=models.IntegerField(default=True)
+    Title=models.CharField(max_length=500)
+    AMT=models.FloatField(default=True)
+    Discount=models.IntegerField(null=True)
+    IMG=models.CharField(max_length=2500)
 
     def __str__(self):
         return self.Title

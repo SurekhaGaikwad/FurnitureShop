@@ -9,6 +9,7 @@ from django.contrib import messages
 def homepage(request):
     return HttpResponse("<h1>On user home page<h1>")
 
+# ---------Register New User-------------------------------------
 def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
@@ -21,6 +22,8 @@ def register_request(request):
 	form = NewUserForm()
 	return render (request,'register.html', context={"register_form":form})
 
+
+# ---------Login User-------------------------------------
 def login_request(request):
 	if request.method == "POST":
 		# form = AuthenticationForm(request, data=request.POST)

@@ -1,15 +1,28 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.http import HttpResponse
-from . models import Studyroom
+from . models import Studyroom, Livingroom
 
 # Create your views here.
 def Home(request):
     return HttpResponse(" I am form Poducts home")
 
-def living(request):
-    return render(request,'living.html')
 
+# ---------Living Room-------------------------------------
+def living(request):
+    livingrooms = Livingroom.objects.all()
+
+    context = {
+        'livingrooms': livingrooms
+    }
+    return render(request,'livingroom.html', context)
+
+
+# ---------Study Room-------------------------------------
 def studyroom(request):
     studyrooms=Studyroom.objects.all()
-    return render(request,'studyroom.html',{'studyrooms':studyrooms}) 
+
+    context = {
+        'studyrooms': studyrooms
+    }
+    return render(request,'studyroom.html', context) 
