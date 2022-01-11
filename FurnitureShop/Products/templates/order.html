@@ -1,0 +1,27 @@
+{% comment %} Products Cards Display {% endcomment %}
+<div style="margin-left: 5%;height: 1250px;">
+  <div style="display: inline;" class="container">
+    <div class="row">
+    {% for livingproduct in livingitem1 %}
+      <div class="col-md-3 shadow p-3 mb-5 bg-white rounded" style="margin-left: 5%; width: 20rem;">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{livingproduct.IMG}}" alt="Card image cap">
+          <img class="card-img-top" src="{{livingproduct.IMGSet1}}" alt="Card image cap">
+          <img class="card-img-top" src="{{livingproduct.IMGSet2}}" alt="Card image cap">
+          <img class="card-img-top" src="{{livingproduct.IMGSet3}}" alt="Card image cap">
+          <img class="card-img-top" src="{{livingproduct.IMGSet4}}" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Product ID {{livingproduct.ProductID}}</p>
+            <h5 class="card-title">{{livingproduct.Title}}</h5>
+            <p class="card-text">Amount.{{livingproduct.AMT}}</p>
+            <p class="card-text">Discount.{{livingproduct.Discount}}</p>
+            <a href="#" class="btn btn-primary">Add To Card</a>
+            <a href="" class="btn btn-primary">Buy</a>
+          </div>
+         </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+ 
