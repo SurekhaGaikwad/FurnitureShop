@@ -59,7 +59,7 @@
               <h5 class="card-title">{{studyproduct.Title}}</h5>
               <p class="card-text">Amount.{{studyproduct.AMT}}</p>
               <p class="card-text">Discount.{{studyproduct.Discount}}</p>
-              <a href="#" class="btn btn-primary">Details</a>
+              <a href="{% url 'order' studyproduct.id %}" class="btn btn-primary">Veiw Detail</a>
             </div>
            </div>
         </div>
@@ -73,7 +73,7 @@
             <h5 class="card-title">{{livingproduct.Title}}</h5>
             <p class="card-text">Amount.{{livingproduct.AMT}}</p>
             <p class="card-text">Discount.{{livingproduct.Discount}}</p>
-            <a href="#" class="btn btn-primary">Details</a>
+            <a href="{% url 'order' livingproduct.id %}" class="btn btn-primary">Veiw Detail</a>
           </div>
          </div>
       </div>

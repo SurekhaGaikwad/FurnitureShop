@@ -5,4 +5,5 @@ urlpatterns = [
     path('',views.Home,name="ProductHome"),
     path('Living/',views.living,name="living"),
     path('Studyroom/',views.studyroom,name="studyroom"),
+    path('order/<int:pk>/',views.order,name="order"),
 ]

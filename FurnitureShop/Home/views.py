@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from Products.models import Studyroom, Livingroom
+
+# Function for filer to discpunt item
 def Home(request):
     livingroom = Livingroom.objects.filter(Discount__gte = 1)
     studyroom = Studyroom.objects.filter(Discount__gte = 1)
@@ -10,11 +12,4 @@ def Home(request):
             }
 
     return render(request,'home.html', context)
-
-# def DiscountItem(request):
-    # livingroom = Livingroom.objects.get(Discount__gte = 0 )
-    # studyroom = Studyroom.objects.filter(Discount__gte = 0)
-  
-
-# Create your views here.
 

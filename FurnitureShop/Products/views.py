@@ -26,3 +26,13 @@ def studyroom(request):
         'studyrooms': studyrooms
     }
     return render(request,'studyroom.html', context) 
+
+# ---------Order -------------------------------------
+def order(request,pk):
+    livingitem1=Livingroom.objects.filter(id = pk)
+    context = {
+        'livingitem1': livingitem1
+    }
+    return render(request,'order.html', context) 
+
+
